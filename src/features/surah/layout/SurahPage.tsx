@@ -1,4 +1,4 @@
-import { useGetSurahQuery } from "src/features/core/store/quranService";
+import { useGetSurahQuery } from "src/features/core/store/coreService";
 
 export const SurahPage = () => {
   const { data: surah, isLoading, isSuccess } = useGetSurahQuery("114");

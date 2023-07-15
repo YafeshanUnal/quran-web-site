@@ -10,8 +10,12 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/api/_/:path*",
-        destination: `${process.env.API_URL}/:path*`,
+        source: "/api/quran/:path*",
+        destination: `${process.env.QURAN_API_URL}/:path*`,
+      },
+      {
+        source: "/api/hadith/:path*",
+        destination: `${process.env.HADITH_API_URL}/:path*`,
       },
     ];
   },

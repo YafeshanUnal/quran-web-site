@@ -1,7 +1,7 @@
 export const HomePageIcon = ({ className }: IconProps) => {
   return (
     <svg
-      className={` ${className}`}
+      className={`fill-current ${className}`}
       fill="none"
       height="24"
       viewBox="0 0 24 24"
