@@ -72,33 +72,31 @@ interface HadithItem {
 }
 
 interface Ayah {
-  data: {
+  id: number;
+  surah_id: number;
+  verse_number: number;
+  char_count: number;
+  word_count: number;
+  total_abjad: number;
+  words_abjad: string;
+  word_chars_abjad: string;
+  verse: string;
+  verse_without_vowel: string;
+  transcription: string;
+  translation: {
     id: number;
-    surah_id: number;
-    verse_number: number;
-    char_count: number;
-    word_count: number;
-    total_abjad: number;
-    words_abjad: string;
-    word_chars_abjad: string;
-    verse: string;
-    verse_without_vowel: string;
-    transcription: string;
-    translation: {
+    author: {
       id: number;
-      author: {
-        id: number;
-        name: string;
-        description: string;
-        language: string;
-      };
-      text: string;
-      footnotes: {
-        id: number;
-        number: number;
-        text: string;
-      }[];
+      name: string;
+      description: string;
+      language: string;
     };
+    text: string;
+    footnotes: {
+      id: number;
+      number: number;
+      text: string;
+    }[];
   };
 }
 

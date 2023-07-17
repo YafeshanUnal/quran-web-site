@@ -1,7 +1,7 @@
 import { useGetSurahQuery } from "src/features/core/store/coreService";
 
 export const SurahPage = () => {
-  const { data: surah, isLoading, isSuccess } = useGetSurahQuery("114");
+  const { data: surah, isLoading, isSuccess } = useGetSurahQuery("105");
   console.log("surah", surah);
   console.log("id", surah?.data.id);
   console.log("audio", surah?.data.audio.mp3);
