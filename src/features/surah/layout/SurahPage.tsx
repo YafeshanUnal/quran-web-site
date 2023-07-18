@@ -1,7 +1,10 @@
+import { useRouter } from "next/router";
 import { useGetSurahQuery } from "src/features/core/store/coreService";
 
 export const SurahPage = () => {
-  const { data: surah, isLoading, isSuccess } = useGetSurahQuery("105");
+  const router = useRouter();
+  const { id } = router.query;
+  const { data: surah, isLoading, isSuccess } = useGetSurahQuery(id as string);
   console.log("surah", surah);
   console.log("id", surah?.data.id);
   console.log("audio", surah?.data.audio.mp3);
