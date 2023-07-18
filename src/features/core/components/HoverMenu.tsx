@@ -118,6 +118,11 @@ export const HoverMenu = () => {
           code: "22",
           definition: "Hac",
         },
+        {
+          id: "23",
+          code: "23",
+          definition: "Muminun",
+        },
       ],
     },
     {
