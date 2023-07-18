@@ -5,7 +5,6 @@ export const baseApi = createApi({
     baseUrl: `/api/`,
     prepareHeaders: (headers, { getState }) => {
       // Diğer başlık ayarlarını buraya ekleyebilirsiniz
-
       return headers;
     },
   }),
