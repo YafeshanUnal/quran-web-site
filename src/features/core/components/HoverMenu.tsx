@@ -113,6 +113,11 @@ export const HoverMenu = () => {
           code: "21",
           definition: "Enbiya",
         },
+        {
+          id: "22",
+          code: "22",
+          definition: "Hac",
+        },
       ],
     },
     {
