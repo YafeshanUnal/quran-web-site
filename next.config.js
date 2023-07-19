@@ -11,11 +11,11 @@ const nextConfig = {
     return [
       {
         source: "/api/quran/:path*",
-        destination: `${process.env.QURAN_API_URL}/:path*`,
+        destination: `https://api.acikkuran.com/:path*`,
       },
       {
         source: "/api/hadith/:path*",
-        destination: `${process.env.HADITH_API_URL}/:path*`,
+        destination: `https://api.sunnah.com/v1/:path*`,
       },
     ];
   },
