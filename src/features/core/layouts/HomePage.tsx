@@ -17,7 +17,7 @@ export const HomePage = () => {
           </p>
         </div>
         {/* Bir ayet, bir hadis */}
-        <section className="flex items-center justify-center gap-10 w-full">
+        <section className="flex items-center justify-center gap-11 w-full">
           <RandomVerseHadith />
         </section>
       </main>
