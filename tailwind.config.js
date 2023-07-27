@@ -27,6 +27,7 @@ module.exports = {
         gotham: ["Gotham", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
         amiri: ["Amiri Quran", "serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },

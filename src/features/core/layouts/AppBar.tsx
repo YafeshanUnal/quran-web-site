@@ -23,7 +23,7 @@ export const AppBar = () => {
         {/* right side*/}
         <div className="">
           <Link
-            href="/sureler"
+            href="/sureler/1"
             className="hover:text-brand-primary hover:animate-bounce "
           >
             Surah
