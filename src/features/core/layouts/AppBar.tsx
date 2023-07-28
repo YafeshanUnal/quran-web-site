@@ -5,32 +5,26 @@ import HomeIcon from "@mui/icons-material/Home";
 import Link from "next/link";
 import SearchBar from "../components/SearchBar";
 import { HoverMenu } from "../components/HoverMenu";
+import { QuranIcon } from "../icons/QuranIcon";
 export const AppBar = () => {
   return (
-    <nav className="flex flex-col gap-5 h-fit text-2xl text-brand-black w-full justify-between px-4 py-4 shadow-lg">
-      {/* col-1 */}
+    <nav className="flex flex-col gap-5 h-fit text-2xl text-brand-black w-full justify-between px-4 py-4 shadow-lg sticky top-0 z-50 bg-brand-white">
       <div className="flex w-full justify-between items-center">
-        {/* left side*/}
         <div className="">
           <Link href="/">
             <HomeIcon className="h-10 w-10" />
           </Link>
         </div>
-        {/* center side*/}
         <div className="flex gap-4">
           <SearchBar />
         </div>
-        {/* right side*/}
-        <div className="">
-          <Link
-            href="/sureler/1"
-            className="hover:text-brand-primary hover:animate-bounce "
-          >
+        <div className="flex gap-4 c">
+          <Link href="/sureler/1" className="flex gap-4">
+            <QuranIcon />
             Surah
           </Link>
         </div>
       </div>
-      {/* col-2 */}
       <HoverMenu />
     </nav>
   );

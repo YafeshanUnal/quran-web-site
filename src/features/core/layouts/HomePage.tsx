@@ -4,10 +4,10 @@ import { useGetSurahQuery } from "../store/coreService";
 
 export const HomePage = () => {
   return (
-    <div className="w-full">
+    <div className="dbg">
       <HomePageCarousel />
       <main>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center mt-10 gap-10">
           <h1 className="text-4xl font-bold text-center text-brand-black">
             Welcome to Quran App
           </h1>

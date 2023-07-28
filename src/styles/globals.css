@@ -15,6 +15,7 @@
   }
   body {
     @apply min-h-screen bg-brand-white text-brand-black;
+    @apply font-poppins;
   }
 
   @layer components {

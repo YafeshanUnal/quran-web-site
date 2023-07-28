@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useGetRandomAyahQuery, useGetRandomHadithQuery } from "../store/coreService";
 import { getTranslate } from "../utils/getTranslate";
+import { RandomIcon } from "../icons/RandomIcon";
 
 const getAyahRequest: GetRandomAyahRequest = {
   surah: Math.floor(Math.random() * 114) + 1,
@@ -36,26 +37,24 @@ export const RandomVerseHadith = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 dbg justify-between gap-10 w-full h-fit my-10">
+    <main className="grid grid-cols-2 justify-between gap-10 text-brand-black w-full h-fit my-10">
       <div className="flex flex-col gap-2">
-        <h2 className="text-2xl font-bold text-center text-brand-black">Bir Ayet</h2>
-        <div className="flex flex-col items-center justify-center gap-4">
-          <p className="text-xl text-center text-brand-black">{ayet?.data?.verse}</p>
-          <p className="text-xl text-center text-brand-black">
-            {ayet?.data?.translation.text}
-          </p>
-          <div className="flex gap-2">
+        <span className="text-2xl font-bold text-center">Bir Ayet</span>
+        <div className="flex flex-col items-center text-center text-xl justify-center gap-4">
+          <p className="font-amiri text-3xl">{ayet?.data?.verse}</p>
+          <p className="">{ayet?.data?.translation.text}</p>
+          <div className="flex gap-2 tablet:flex-col">
             <span>Sure: {ayet?.data?.surah.name}</span>
             <span>Ayet: {ayet?.data?.verse_number}</span>
           </div>
         </div>
       </div>
-      <div className="">
-        <h2 className="text-2xl font-bold text-center text-brand-black">Bir Hadis</h2>
+      <div className="flex gap-6 flex-col">
+        <span className="text-2xl font-bold text-center">Bir Hadis</span>
         {hadith && (
-          <div className="flex flex-col items-center justify-center gap-4">
-            <p className="text-xl text-center text-brand-black">{translatedText}</p>
-            <div className="flex gap-2">
+          <div className="flex flex-col text-xl text-center items-center justify-center gap-4">
+            <p className="">{translatedText}</p>
+            <div className="flex gap-2 tablet:flex-col">
               <span>Kitap Adı: {hadith.collection}</span>
               <span>Kitap Numarası: {hadith.bookNumber}</span>
               <span>Hadis Numarsı: {hadith.hadithNumber}</span>
@@ -63,6 +62,6 @@ export const RandomVerseHadith = () => {
           </div>
         )}
       </div>
-    </div>
+    </main>
   );
 };

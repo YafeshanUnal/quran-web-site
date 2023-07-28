@@ -155,7 +155,7 @@ export const HoverMenu = () => {
             hover:bg-zinc-600 hover:text-white rounded-md px-4 py-2 cursor-pointer transition-all ease-in-out duration-300 group-hover:bg-brand-primary group-hover:text-white"
           >
             {category.definition}
-            <div className="h-80 w-80 overflow-y-scroll hidden group-hover:flex flex-col">
+            <div className="h-80 overflow-y-scroll hidden group-hover:flex flex-col">
               {category?.subCategories?.map((subCategory) => (
                 <Link
                   key={subCategory.id}
