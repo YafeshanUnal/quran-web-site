@@ -12,7 +12,13 @@ const extendedApi = baseApi.injectEndpoints({
         },
       }),
     }),
+    getPageByNumber: build.query<SurahDetail, string>({
+      query: (page) => ({
+        url: `http://api.alquran.cloud/v1/page/${page}/quran-uthmani`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useGetHafizListQuery } = extendedApi;
+export const { useGetHafizListQuery, useGetPageByNumberQuery } = extendedApi;

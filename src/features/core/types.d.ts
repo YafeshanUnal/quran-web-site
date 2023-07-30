@@ -104,3 +104,51 @@ interface GetRandomAyahRequest {
   surah: number;
   verse: number;
 }
+
+// Verse model
+interface Page {
+  id: number;
+  chapter_id?: number;
+  verse_number: number;
+  verse_key: string;
+  verse_index?: number;
+  text_uthmani?: string;
+  text_uthmani_simple?: string;
+  text_imlaei?: string;
+  text_imlaei_simple?: string;
+  text_indopak?: string;
+  text_uthmani_tajweed?: string;
+  juz_number: number;
+  hizb_number: number;
+  rub_number: number;
+  sajdah_type: null;
+  sajdah_number: null;
+  page_number: number;
+  image_url?: string;
+  image_width?: number;
+  words?: Word[];
+  audio?: AudioFile;
+  translations?: Translation[];
+  code_v1?: string;
+  code_v2?: string;
+  v1_page?: number;
+  v2_page?: number;
+}
+
+// Word model
+interface Word {
+  // Word model properties
+  // ...
+}
+
+// AudioFile model
+interface AudioFile {
+  // AudioFile model properties
+  // ...
+}
+
+// Translation model
+interface Translation {
+  // Translation model properties
+  // ...
+}

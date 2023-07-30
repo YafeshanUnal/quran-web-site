@@ -2,20 +2,25 @@ import Image from "next/image";
 import { useGetHafizListQuery } from "../store/surahService";
 import { Select } from "@mui/material";
 import ReactPlayer from "react-player";
+import { getQueryPageNumbers } from "src/features/core/utils/getQueryPageNumbers";
+import { get } from "http";
+import { getArabicVoice } from "src/features/core/utils/getArabicVoice";
 
 interface SurahHeaderFrameProps {
-  surah: Surah;
+  surah: SurahDetail;
 }
 export const SurahHeaderFrame = ({ surah }: SurahHeaderFrameProps) => {
   const { data } = useGetHafizListQuery();
-
+  if (!surah) {
+    return <div>loading...</div>;
+  }
   return (
     <header className="flex flex-col items-center top-0  z-10">
       <div className="flex relative w-full max-w-lg h-[400px]">
         <Image className="rounded-lg object-cover" src="/surahFrame.jpg" fill alt={""} />
         <div className="absolute top-0 w-full left-0 flex justify-between items-center text-brand-white flex-col gap-2 h-full p-4">
-          <span className="text-3xl">{surah?.name}</span>
-          <span className="text-2xl">Ayet Sayısı: {surah?.verse_count}</span>
+          <span className="text-3xl">{surah.surahs?.englishName}</span>
+          <span className="text-2xl">Ayet Sayısı: {surah?.ayahs?.length}</span>
           <span className="h-[0.5px] bg-brand-white w-full"></span>
           <div className="flex flex-col items-center gap-4">
             <div className="flex items-center gap-3">
@@ -35,15 +40,11 @@ export const SurahHeaderFrame = ({ surah }: SurahHeaderFrameProps) => {
                   </option>
                 ))}
               </Select> */}
-              <audio
-                controls
-                src={`https://everyayah.com/data/Abdul_Basit_Murattal_64kbps/PageMp3s/Page${surah?.pageNumber}.mp3`}
-                // güzel stillendir border shadow
-              ></audio>
+              <audio controls src={getArabicVoice(surah?.surahs?.pageNumber)}></audio>
             </div>
             <div className="flex items-center gap-3">
               <span>Türkçe Meal </span>
-              <audio controls src={surah?.audio.mp3}></audio>
+              <audio controls src={surah?.surahs?.audio?.mp3}></audio>
             </div>
           </div>
           <Image src="/bismillah.png" width={214} height={48} alt={""} />
