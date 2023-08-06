@@ -2,7 +2,7 @@ import { getArabicNumbers } from "src/features/core/utils/getArabicNumbers";
 import Image from "next/image";
 import { useState } from "react";
 interface SurahFrameProps {
-  surah: SurahDetail;
+  surah: Surah;
 }
 
 export const SurahFrame = ({ surah }: SurahFrameProps) => {
@@ -33,13 +33,13 @@ export const SurahFrame = ({ surah }: SurahFrameProps) => {
   };
   return (
     <div className="flex flex-row-reverse gap-1 flex-wrap">
-      {surah?.ayahs?.map((verse: Ayah, index: number) => (
+      {surah?.verses?.map((verse: Verse, index: number) => (
         <div key={verse.id} className="flex items-center group relative w-auto">
           <span
             className="text-black relative rounded-full items-start
                    font-amiri"
           >
-            <Image src="/verseFrame.png" width={36} height={36} alt={""} />
+            <Image src="/verseFrame.png" width={48} height={48} alt={""} />
             <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-2/3">
               {getArabicNumbers((index + 1).toString())}
             </span>
@@ -48,14 +48,15 @@ export const SurahFrame = ({ surah }: SurahFrameProps) => {
             className="flex  p-4 font-amiri text-3xl leading-relaxed border border-yellow-200 rounded-lg flex-1 "
             dir="rtl"
           >
-            <span> {verse.text}</span>
+            <span> {verse.verse}</span>
           </div>
           <div className="hidden group-hover:flex absolute right-0 top-0 p-2 bg-white rounded-lg h-full w-full items-center z-10 cursor-pointer">
-            <span className="text-2xl font-amiri text-right">{verse.transcription}</span>
+            <span className="text-2xl font-amiri text-right">
+              {verse.translation.text}
+            </span>
           </div>
         </div>
       ))}
-      {surah?.edition?.englishName}
       {/* <div className="flex gap-2 mt-4">
         {pageNumbers.map((pageNumber) => (
           <button

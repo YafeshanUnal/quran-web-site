@@ -8,8 +8,8 @@ import { spawn } from "child_process";
 export const SurahPage = () => {
   const router = useRouter();
   const { id } = router.query;
-  // const { data: surah, isLoading, isSuccess } = useGetSurahQuery(id as string);
-  const { data: surah, isLoading } = useGetPageByNumberQuery(id as string);
+  const { data: surah, isLoading, isSuccess } = useGetSurahQuery(id as string);
+  // const { data: surah, isLoading } = useGetPageByNumberQuery(id as string);
   console.log(surah);
 
   if (isLoading || !surah) {
@@ -18,9 +18,9 @@ export const SurahPage = () => {
 
   return (
     <main className="h-screen">
-      <div className="text-xl text-red-600 max-h-[70vh] flex flex-col gap-2 px-3 mt-2 overflow-y-auto">
-        <SurahHeaderFrame surah={surah} />
-        <SurahFrame surah={surah} />
+      <div className="text-xl text-red-600 max-h-[100vh] flex flex-col gap-2 px-3 mt-2 overflow-y-auto">
+        <SurahHeaderFrame surah={surah?.data} />
+        <SurahFrame surah={surah?.data} />
       </div>
     </main>
   );

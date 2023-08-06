@@ -129,16 +129,13 @@ export const HoverMenu = () => {
       id: "2",
       code: "Hadisler",
       definition: "Hadisler",
-    },
-    {
-      id: "3",
-      code: "3",
-      definition: "Hicri Takvim",
-    },
-    {
-      id: "4",
-      code: "4",
-      definition: "Namaz Vakitleri",
+      subCategories: [
+        {
+          id: "1",
+          code: "1",
+          definition: "40 Hadis",
+        },
+      ],
     },
   ];
 
