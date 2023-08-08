@@ -26,7 +26,7 @@ export const AppBar = () => {
           </Link>
         </div>
         <div className="flex gap-4 c">
-          <Link href="/sureler/1" className="flex gap-4">
+          <Link href="/namaz" className="flex gap-4">
             <SalahIcon className="bg-black" />
             Salah
           </Link>
