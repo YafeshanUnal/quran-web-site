@@ -26,7 +26,11 @@ export const AppBar = () => {
           </Link>
         </div>
         <div className="flex gap-4 c">
-          <Link href="/namaz" className="flex gap-4">
+          <Link
+            href="/namaz?city=London&country=United Kingdom&date=2021-09-01
+          "
+            className="flex gap-4"
+          >
             <SalahIcon className="bg-black" />
             Salah
           </Link>
